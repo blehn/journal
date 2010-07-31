@@ -1,11 +1,13 @@
 JournalDemo::Application.routes.draw do
-  get "pages/home"
+  get "users/new"
+  
+  match '/register',   :to => 'users#new'
 
-  get "pages/about"
-
-  resources :entries
-
-  resources :users
+  root :to => 'pages#home'
+  match '/about',   :to => 'pages#about'
+  match '/privacy',   :to => 'pages#privacy'
+  match '/faq',   :to => 'pages#faq'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

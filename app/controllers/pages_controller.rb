@@ -6,5 +6,13 @@ class PagesController < ApplicationController
   def about
     @title = "About"
   end
+  
+  def faq
+    @title = "FAQ"
+  end
+
+  def privacy
+    @title = "Privacy"
+  end
 
 end

@@ -17,5 +17,21 @@ describe PagesController do
         :content => "Journl | Definitely not a blog. | About")
     end
   end
+  
+  describe "GET 'about'" do
+    it "should have the right title" do
+      get 'faq'
+      response.should have_selector("title",
+        :content => "Journl | Definitely not a blog. | FAQ")
+    end
+  end
+  
+  describe "GET 'about'" do
+    it "should have the right title" do
+      get 'privacy'
+      response.should have_selector("title",
+        :content => "Journl | Definitely not a blog. | Privacy")
+    end
+  end
 
 end
