@@ -22,7 +22,32 @@ module SessionsHelper
     self.current_user = nil
   end
 
+  def authenticate
+    deny_access unless logged_in?
+  end
 
+  def deny_access
+    store_location
+    redirect_to login_path, :notice => "Please log in to access this page."
+  end
+  
+  def current_user?(user)
+    user == current_user
+  end
+
+  def store_location
+    session[:return_to] = request.fullpath
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    clear_return_to
+  end
+
+  def clear_return_to
+    session[:return_to] = nil
+  end
+  
   private
 
     def user_from_remember_token
@@ -32,36 +57,4 @@ module SessionsHelper
     def remember_token
       cookies.signed[:remember_token] || [nil, nil]
     end
-
-    def authenticate
-      deny_access unless logged_in?
-    end
-
-    def deny_access
-      redirect_to login_path, :notice => "Please log in to access this page."
-    end
-
-    def current_user?(user)
-      user == current_user
-    end
-
-    def deny_access
-      store_location
-      flash[:notice] = "Please log in to access this page."
-      redirect_to login_path
-    end
-
-    def store_location
-      session[:return_to] = request.fullpath
-    end
-
-    def redirect_back_or(default)
-      redirect_to(session[:return_to] || default)
-      clear_return_to
-    end
-
-    def clear_return_to
-      session[:return_to] = nil
-    end
-
 end

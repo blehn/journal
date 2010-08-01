@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
+    @post = Post.new if logged_in?
   end
 
   def about

@@ -5,5 +5,5 @@
       prohibited this user from being saved:
     %p There were problems with the following fields:
     %ul
-      - @user.errors.full_messages.each do |msg|
+      - object.errors.full_messages.each do |msg|
         %li= msg

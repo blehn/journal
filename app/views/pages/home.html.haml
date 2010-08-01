@@ -1,6 +1,15 @@
-%h1 Journl Home
-%p
-  This is the home page for the
-  %a{:href => "http://railstutorial.org/"} Ruby on Rails Tutorial 
-  sample application.
-  = link_to "Sign Up", signup_path, :class => "signup_button round"
+- if logged_in?
+  %table.front{:summary => "For logged-in users"}
+    %tr
+      %td.main
+        %h1.post What's up?
+        = render 'shared/post_form'
+      %td.sidebar.round
+        = render 'shared/user_info'
+- else
+  %h1 Sample App
+  %p
+    This is the home page for the
+    %a{:href => "http://railstutorial.org/"} Ruby on Rails Tutorial
+    sample application.
+  = link_to "Sign up now!", signup_path, :class => "signup_button round"

@@ -1,0 +1,6 @@
+.user_info
+  %a{:href => user_path(current_user)}
+    %span.user_name
+      = current_user.name
+    %span.posts
+      = pluralize(current_user.posts.count, "post")
