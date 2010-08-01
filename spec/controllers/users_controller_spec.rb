@@ -28,6 +28,14 @@ describe UsersController do
       get :show, :id => @user
       assigns(:user).should == @user
     end
+
+    it "should show the user's posts" do
+      mp1 = Factory(:post, :user => @user, :content => "Foo bar")
+      mp2 = Factory(:post, :user => @user, :content => "Baz quux")
+      get :show, :id => @user
+      response.should have_selector("span.content", :content => mp1.content)
+      response.should have_selector("span.content", :content => mp2.content)
+    end
   end
 
   describe "GET 'new'" do
