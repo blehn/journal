@@ -137,5 +137,12 @@ describe User do
     it "should have the right posts in the right order" do
       @user.posts.should == [@mp2, @mp1]
     end
+
+    it "should destroy associated posts" do
+      @user.destroy
+      [@mp1, @mp2].each do |post|
+        Post.find_by_id(post.id).should be_nil
+      end
+    end
   end
 end
