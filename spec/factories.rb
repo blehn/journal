@@ -4,3 +4,12 @@ Factory.define :user do |user|
   user.email                 "mhartl@example.com"
   user.password              "foobar"
 end
+
+Factory.sequence :email do |n|
+  "person-#{n}@example.com"
+end
+
+Factory.define :post do |post|
+  post.content "Foo bar"
+  post.association :user
+end
