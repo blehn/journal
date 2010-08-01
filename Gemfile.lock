@@ -95,7 +95,7 @@ PLATFORMS
 DEPENDENCIES
   annotate-models
   factory_girl_rails (= 1.0)
-  haml
+  haml (= 3.0.15)
   rails (= 3.0.0.rc)
   rspec (= 2.0.0.beta.18)
   rspec-rails (= 2.0.0.beta.18)
