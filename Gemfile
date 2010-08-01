@@ -12,6 +12,7 @@ gem 'haml', '3.0.15'
 group :development do
   gem 'rspec-rails', '2.0.0.beta.18'
   gem 'annotate-models'
+  gem 'faker', '0.3.1'
 end
 
 group :test do
