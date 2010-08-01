@@ -1,13 +1,16 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
-    @post = Post.new if logged_in?
+    if logged_in?
+      @post = Post.new
+      @feed_items = current_user.feed.paginate(:page => params[:page])
+    end
   end
 
   def about
     @title = "About"
   end
-  
+
   def faq
     @title = "FAQ"
   end
