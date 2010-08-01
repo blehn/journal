@@ -51,10 +51,10 @@ describe "LayoutLinks" do
                                     :content => "Log Out")
     end
 
-    it "should have a Settings link" do
+    it "should have a Profile link" do
       visit root_path
       response.should have_selector("a", :href => user_path(@user),
-                                    :content => "Settings")
+                                    :content => "Profile")
     end
   end
 end
