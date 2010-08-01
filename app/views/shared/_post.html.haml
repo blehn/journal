@@ -1,0 +1,11 @@
+%tr
+  %td.post
+    %span.content= post.content
+    %span.timestamp
+      Posted #{time_ago_in_words(post.created_at)} ago.
+  - user = post.user rescue User.find(post.user_id)
+  - if current_user?(user)
+    %td
+      = link_to "delete", post, :method => :delete, |
+        :confirm => "Are you sure?",                |
+        :title => post.content                      |
