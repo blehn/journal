@@ -1,7 +1,12 @@
 JournalDemo::Application.routes.draw do
-  resources :users
+  get "sessions/new"
   
-  match '/register',   :to => 'users#new'
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+  
+  match '/signup',  :to => 'users#new'
+  match '/login',  :to => 'sessions#new'
+  match '/logout', :to => 'sessions#destroy'
 
   root :to => 'pages#home'
   match '/about',   :to => 'pages#about'

@@ -18,7 +18,7 @@ describe PagesController do
     end
   end
   
-  describe "GET 'about'" do
+  describe "GET 'FAQ'" do
     it "should have the right title" do
       get 'faq'
       response.should have_selector("title",
@@ -26,7 +26,7 @@ describe PagesController do
     end
   end
   
-  describe "GET 'about'" do
+  describe "GET 'Privacy'" do
     it "should have the right title" do
       get 'privacy'
       response.should have_selector("title",
