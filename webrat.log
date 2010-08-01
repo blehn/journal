@@ -1,0 +1,11 @@
+# Logfile created on 2010-08-01 02:13:19 -0400 by logger.rb/25413
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"_snowman"=>"\xE2\x98\x83", "user"=>{"name"=>"", "email"=>"", "password"=>""}, "commit"=>"Register"} and HTTP headers {"HTTP_REFERER"=>"/register"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"_snowman"=>"\xE2\x98\x83", "user"=>{"name"=>"", "email"=>"", "password"=>""}, "commit"=>"Register"} and HTTP headers {"HTTP_REFERER"=>"/register"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"_snowman"=>"\xE2\x98\x83", "user"=>{"name"=>"", "email"=>"", "password"=>""}, "commit"=>"Register"} and HTTP headers {"HTTP_REFERER"=>"/register"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"_snowman"=>"\xE2\x98\x83", "user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"foobar"}, "commit"=>"Register"} and HTTP headers {"HTTP_REFERER"=>"/register"}
+REQUESTING PAGE: GET http://www.example.com/users/1 with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
