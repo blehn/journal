@@ -1,12 +1,10 @@
 %tr
   %td.post
-    %span.user
-      = link_to h(feed_item.user.name), feed_item.user
     %span.content= feed_item.content
     %span.timestamp
-      Posted #{time_ago_in_words(feed_item.created_at)} ago.
+      #{feed_item.created_at.strftime("%B %d %Y %I:%M %p")}
   - if current_user?(feed_item.user)
     %td
       = link_to "delete", feed_item, :method => :delete, |
-        :confirm => "You sure?",                         |
+        :confirm => "Are you sure?",                         |
         :title => feed_item.content                      |
