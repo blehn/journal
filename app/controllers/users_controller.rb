@@ -4,8 +4,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.paginate(:page => params[:page])
-    @title = @user.name
+    @posts = @user.posts
+    respond_to do |format|
+      format.xml { render :xml => @posts}
+      format.html { render :csv => @posts}
+    end
   end
 
   def new

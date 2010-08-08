@@ -1,5 +1,4 @@
-%tr
-  %td.post
-    %span.content= post.content
-    %span.timestamp
-      Posted #{time_ago_in_words(post.created_at)} ago.
+.post
+  .content= post.content
+  %h4.timestamp
+    Posted #{time_ago_in_words(post.created_at)} ago.

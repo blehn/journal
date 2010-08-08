@@ -1,12 +1,11 @@
 - if logged_in?
-  %table.front{:summary => "For logged-in users"}
-    %tr
-      %td.main
-        %h1.post Write a new entry.
-        = render 'shared/post_form'
-        = render 'shared/feed'
-      %td.sidebar.round
-        = render 'shared/user_info'
+  .front{:summary => "For logged-in users"}
+    .main
+      %h3.post Write a new entry.
+      = render 'shared/post_form'
+      = render 'shared/feed'
+    .sidebar.round
+      = render 'shared/user_info'
 - else
   %h1 Sample App
   %p

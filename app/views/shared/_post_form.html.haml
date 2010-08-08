@@ -1,6 +1,6 @@
 = form_for @post do |f|
   = render 'shared/error_messages', :object => f.object
-  %span.timestamp
+  %h4.timestamp
     #{Time.now.strftime("%B %d %Y %I:%M %p")}
   .field
     = f.text_area :content

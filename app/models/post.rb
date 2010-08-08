@@ -7,4 +7,11 @@ class Post < ActiveRecord::Base
   validates :user_id, :presence => true
 
   default_scope :order => 'posts.created_at DESC'
+  
+  comma do  # implicitly named :default
+    id
+    created_at
+    content
+  end
+
 end

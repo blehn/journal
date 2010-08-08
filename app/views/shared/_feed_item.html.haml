@@ -1,10 +1,9 @@
-%tr
-  %td.post
-    %span.content= feed_item.content
-    %span.timestamp
-      #{feed_item.created_at.strftime("%B %d %Y %I:%M %p")}
-  - if current_user?(feed_item.user)
-    %td
-      = link_to "delete", feed_item, :method => :delete, |
-        :confirm => "Are you sure?",                         |
-        :title => feed_item.content                      |
+.post
+  %h4
+    #{feed_item.created_at.strftime("%d %B %Y")}
+  .content= feed_item.content 
+    
+- if current_user?(feed_item.user)
+  /= link_to "delete", feed_item, :method => :delete, |
+  /  :confirm => "Are you sure?",                         |
+  /  :title => feed_item.content                      |

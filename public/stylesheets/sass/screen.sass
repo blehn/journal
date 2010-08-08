@@ -1,5 +1,5 @@
 body
-  font-family: "Helvetica Neue"
+  font-family: Georgia, "Helvetica Neue"
   text-align: center
 .container
   margin: 20px auto
@@ -8,6 +8,11 @@ body
   max-width: 700px
 #content
   margin: 40px 0
+  float: left
+  width: 100%
+header, footer, .pagination, .user_info, .main, #new_post, .posts
+  float: left
+  width: 100%
 h1, h2
   font-size: 20px
   margin: 10px
@@ -28,14 +33,14 @@ p
   width: 100px
   margin: 20px 0
 
-div.field, div.actions
+.field, .actions
   margin-bottom: 10px
   
 .field_with_errors 
   margin-top: 10px
   padding: 2px
   background-color: red
-  display: table
+  display: table 
 
 .field_with_errors label 
   color: #fff
@@ -73,45 +78,50 @@ h1.post
   margin-bottom: 0.3em
 
 
-table.posts 
-  margin-top: 1em
+.posts 
+  margin: 12px 0
 
-
-table.posts tr 
-  height: 70px
-
-
-table.posts tr td.gravatar 
-  border-top: 1px solid #ccc
+.posts .post 
+  border-top: 1px solid #eee
   vertical-align: top
-  width: 50px
+  padding: 20px 0
+  width: 100%
+  float: left
 
+.posts .post .content
+  width: 65%
+  float: left
+  line-height: 1.5
+  font-size: 14px
+  color: #444
+  margin: 0 0 0 5%
 
-table.posts tr td.post 
-  border-top: 1px solid #ccc
-  vertical-align: top
-  padding-top: 10px
-
-
-table.posts tr td.post span.timestamp 
+.posts  .post h4
+  font-family: "Lucida Grande"
   display: block
   font-size: 85%
-  color: #666
+  color: #999
+  font-size: 11px
+  width: 15%
+  float: left
+  line-height: 1.4
+  font-weight: normal
+  margin-top: 3px
 
 
-div.user_info img 
+.user_info img 
   padding-right: 0.1em
 
 
-div.user_info a 
+.user_info a 
   text-decoration: none
 
 
-div.user_info span.user_name 
+.user_info span.user_name 
   position: absolute
 
 
-div.user_info span.posts 
+.user_info span.posts 
   font-size: 80%
 
 

@@ -6,9 +6,9 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     
     User.create!(:name => "Example User",
-                 :email => "example@railstutorial.org",
+                 :email => "test@test.org",
                  :password => "foobar" )
-    99.times do |n|
+    5.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@railstutorial.org"
       password  = "password"
@@ -18,8 +18,8 @@ namespace :db do
     end
     
     User.all(:limit => 6).each do |user|
-      50.times do
-        user.posts.create!(:content => Faker::Lorem.sentence(12))
+      3000.times do
+        user.posts.create!(:content => Faker::Lorem.sentence(50))
       end
     end
   end
